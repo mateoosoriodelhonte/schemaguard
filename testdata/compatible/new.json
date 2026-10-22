@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "total": { "type": "integer" },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "region": { "type": "string" }
+      },
+      "required": ["source"]
+    }
+  },
+  "required": ["id"]
+}

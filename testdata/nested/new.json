@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "User response",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "email": { "type": "string" },
+    "score": { "type": "number" },
+    "createdAt": { "type": "string", "description": "RFC 3339 timestamp" },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "age": { "type": "integer" },
+        "address": {
+          "type": "object",
+          "properties": {
+            "street": { "type": "string" },
+            "city": { "type": "string" },
+            "country": { "type": "string" }
+          },
+          "required": ["city", "country"]
+        }
+      },
+      "required": ["displayName", "address", "age"]
+    }
+  },
+  "required": ["id", "profile"]
+}

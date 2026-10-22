@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "User response",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "email": { "type": "string" },
+    "nickname": { "type": "string" },
+    "score": { "type": "integer" },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "age": { "type": "integer" },
+        "address": {
+          "type": "object",
+          "properties": {
+            "street": { "type": "string" },
+            "city": { "type": "string" },
+            "postalCode": { "type": "string" }
+          },
+          "required": ["city", "postalCode"]
+        }
+      },
+      "required": ["displayName", "address"]
+    }
+  },
+  "required": ["id", "email", "profile"]
+}
